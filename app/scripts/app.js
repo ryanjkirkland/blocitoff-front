@@ -7,10 +7,14 @@
         });
 
         $stateProvider
-          .state('task', {
+          .state('home', {
               url: '/',
-              controller: 'TaskCtrl as task',
-              templateUrl: 'template/task.html'
+              templateUrl: 'templates/home.html'
+        })
+          .state('tasks', {
+              url: '/tasks',
+              controller: 'TaskCtrl as tasks',
+              templateUrl: 'templates/task.html'
         });
      }
 
