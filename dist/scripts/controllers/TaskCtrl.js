@@ -5,7 +5,8 @@
 
     $scope.createTask = function() {
       $scope.tasks.add$({
-        name: $scope.newTask
+        name: $scope.newTask,
+        created_at: Time.now
       });
     };
   }
