@@ -15,6 +15,11 @@
               url: '/tasks',
               controller: 'TaskCtrl as tasks',
               templateUrl: 'templates/task.html'
+        })
+          .state('history', {
+              url: '/history',
+              controller: 'HistoryCtrl as history',
+              templateUrl: 'templates/history.html'
         });
      }
 

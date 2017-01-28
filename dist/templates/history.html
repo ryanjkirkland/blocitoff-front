@@ -1,0 +1,8 @@
+<div class="container" ng-controller="HistoryCtrl">
+  <h1>HOW TO CLASSIFY ROCKS</h1>
+  <ul>
+    <li ng-repeat="task in tasks" ng-show="history(task)">
+      <div>{{ task.name }}</div>
+    </li>
+  </ul>
+</div>

@@ -20,15 +20,6 @@
       }  else {
         return true;
       }
-
-      /*for(i = 0; i <= tasks.length; i++) {
-        if ((today - tasks[i].createdAt) < 604800000) {
-          console.log(false);
-        }  else {
-          console.log(tasks[i]);
-          console.log(false);
-        }
-      }*/
     };
   }
 
