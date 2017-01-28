@@ -1,0 +1,18 @@
+body {
+  background-color: #aaa;
+}
+
+.task-background {
+  background-color: #eeeeff;
+  padding-bottom: 25px;
+  margin-top: 20px;
+}
+
+.navbar {
+  background-color: #eeeeff;
+}
+
+.list-heading {
+  text-align: center;
+  padding-bottom: 10px;
+}

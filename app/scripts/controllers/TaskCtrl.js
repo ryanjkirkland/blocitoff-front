@@ -6,7 +6,8 @@
     $scope.addNewTask = function() {
       $scope.tasks.$add({
         name: $scope.newTask.name,
-        createdAt: Date.now()
+        createdAt: Date.now(),
+        state: "active"
       });
 
       $scope.newTask = {}
