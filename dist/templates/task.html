@@ -4,12 +4,15 @@
     <div class="col-md-6 task-background">
       <h1 class="list-heading">Tasks</h1>
       <ul class="list-group">
-        <li ng-repeat="task in tasks" ng-hide="oldTask(task)" class="list-group-item">
+        <li ng-repeat="task in tasks | orderBy:'-priority.value'" ng-hide="oldTask(task)" class="list-group-item">
           <div>{{ task.name }}</div>
+          <div>{{ task.priority.label }}</div>
         </li>
       </ul>
       <form class="task-submit input-group">
         <input type="text" ng-model="newTask.name" class="form-control">
+        <label for="priority">Priority:</label>
+        <select name="priority" ng-model="newPriority" ng-options="x.label for x in priority"></select>
         <span class="input-group-btn">
           <input type="submit" ng-click="addNewTask()" class="btn">
         </span>
