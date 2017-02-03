@@ -12,9 +12,10 @@
         </span>
       </form>
       <ul class="list-group">
-        <li ng-repeat="task in tasks | orderBy:'-priority.value'" ng-hide="oldTask(task)" class="list-group-item">
+        <li ng-repeat="task in tasks | orderBy:'-priority.value'" ng-hide="task.state == 'complete' || task.state == 'expired'" class="list-group-item">
           <div>{{ task.name }}</div>
           <div>{{ task.priority.label }}</div>
+          <task-state task="task" tasks="tasks"></task-state>
         </li>
       </ul>
     </div>

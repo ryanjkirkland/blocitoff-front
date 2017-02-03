@@ -2,13 +2,13 @@
   function TaskCtrl($scope, $firebaseArray) {
     var ref = firebase.database().ref().child('tasks');
     $scope.tasks = $firebaseArray(ref);
-    window.foo = $scope.tasks;
+    // window.foo = $scope.tasks;
     $scope.addNewTask = function() {
       $scope.tasks.$add({
         name: $scope.newTask.name,
         createdAt: Date.now(),
         priority: $scope.newPriority,
-        state: "active"
+        state: $scope.state[0]
       });
 
       $scope.newTask = {}
@@ -20,6 +20,14 @@
       if ((today - task.createdAt) < 604800000) {
         return false;
       }  else {
+        task.state = "expired";
+        return true;
+      }
+    };
+
+    $scope.completedTask = function(task) {
+      if (task.state == "completed") {
+        console.log('completed');
         return true;
       }
     };
@@ -38,14 +46,11 @@
         value: 1
       }
     ];
+
+    $scope.state = ["active", "complete"];
+
     $scope.newPriority = $scope.priority[0];
 
-    /*$scope.updatePriority = function(task) {
-      task.priority = $scope.newPriority;
-      console.log($scope.newPriority);
-      console.log(task.priority);
-      console.log(task);
-    };*/
   }
 
   angular
