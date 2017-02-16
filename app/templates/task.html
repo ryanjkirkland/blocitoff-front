@@ -10,7 +10,7 @@
         <input type="submit" ng-click="addNewTask()" class="btn pull-right">
       </form>
       <ul class="list-group">
-        <li ng-repeat="task in tasks | orderBy:'-priority.value'" ng-hide="task.state == 'complete' || task.state == 'expired'" class="list-group-item">
+        <li ng-repeat="task in tasks | orderBy:'-priority.value'" ng-hide="task.state == 'complete' || oldTask(task)" class="list-group-item">
           <div class="task-section">{{ task.name }}</div>
           <div class="task-section">{{ task.priority.label }}</div>
           <task-state task="task" tasks="tasks"></task-state>

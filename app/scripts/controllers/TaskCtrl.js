@@ -2,7 +2,7 @@
   function TaskCtrl($scope, $firebaseArray) {
     var ref = firebase.database().ref().child('tasks');
     $scope.tasks = $firebaseArray(ref);
-    // window.foo = $scope.tasks;
+    window.foo = $scope.tasks;
     $scope.addNewTask = function() {
       $scope.tasks.$add({
         name: $scope.newTask.name,
@@ -16,18 +16,10 @@
 
     $scope.oldTask = function(task) {
       var today = Date.now();
-
       if ((today - task.createdAt) < 604800000) {
         return false;
       }  else {
         task.state = "expired";
-        return true;
-      }
-    };
-
-    $scope.completedTask = function(task) {
-      if (task.state == "completed") {
-        console.log('completed');
         return true;
       }
     };

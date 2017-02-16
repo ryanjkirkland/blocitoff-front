@@ -14,17 +14,12 @@
       link: function(scope, elem, attrs) {
         elem.bind('click', function(task) {
 
-          console.log(elem);
-
-          console.log(scope.task)
 
           var task = scope.task;
           var tasks = scope.tasks;
 
           task.state = "complete";
           tasks.$save(task);
-
-          console.log(scope.task);
 
         });
       }
