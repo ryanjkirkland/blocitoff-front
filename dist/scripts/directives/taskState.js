@@ -6,13 +6,15 @@
     return {
       restrict: 'AE',
       replace: true,
-      template: '<input type="submit" ng-click="task-state" class="btn" value="Complete">',
+      template: '<input type="submit" ng-click="task-state" class="btn complete" value="All done?">',
       scope: {
         task: "=",
         tasks: "="
       },
       link: function(scope, elem, attrs) {
         elem.bind('click', function(task) {
+
+          console.log(elem);
 
           console.log(scope.task)
 
@@ -23,15 +25,7 @@
           tasks.$save(task);
 
           console.log(scope.task);
-          // window.ref = ref;
-          // console.log(task);
-          // // window.foo = ref.child(task.$id);
-          // console.log('yO BUD');
-          // task.state = "completed";
-          // // window.foo = scope.task;
-          // window.bar = tasks;
-          // console.log(scope.task.state);
-          /*scope.task.$save({state: "completed"});*/
+
         });
       }
     };

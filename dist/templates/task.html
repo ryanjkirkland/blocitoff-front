@@ -2,19 +2,17 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6 task-background">
-      <h1 class="list-heading">Tasks</h1>
-      <form class="task-submit input-group">
+      <h1 class="text-center list-heading">Tasks</h1>
+      <form class="form-inline task-submit">
         <input type="text" ng-model="newTask.name" class="form-control">
-        <label for="priority">Priority:</label>
-        <select name="priority" ng-model="newPriority" ng-options="x.label for x in priority"></select>
-        <span class="input-group-btn">
-          <input type="submit" ng-click="addNewTask()" class="btn">
-        </span>
+        <label for="priority" id="priority">Priority:</label>
+        <select name="priority" ng-model="newPriority" ng-options="x.label for x in priority" class="priority-select"></select>
+        <input type="submit" ng-click="addNewTask()" class="btn pull-right">
       </form>
       <ul class="list-group">
         <li ng-repeat="task in tasks | orderBy:'-priority.value'" ng-hide="task.state == 'complete' || task.state == 'expired'" class="list-group-item">
-          <div>{{ task.name }}</div>
-          <div>{{ task.priority.label }}</div>
+          <div class="task-section">{{ task.name }}</div>
+          <div class="task-section">{{ task.priority.label }}</div>
           <task-state task="task" tasks="tasks"></task-state>
         </li>
       </ul>

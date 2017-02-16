@@ -1,18 +1,76 @@
+* {
+  font-family: 'Roboto', sans-serif;;
+}
 body {
-  background-color: #aaa;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/images/background.jpg");
+  background-size: cover;
+}
+
+.background-cover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text {
+  margin-top: 35vh;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 .task-background {
-  background-color: #eeeeff;
+  background-color: rgba(255, 255, 255, 0.5);;
   padding-bottom: 25px;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .navbar {
-  background-color: #eeeeff;
+  background: rgba(255, 255, 255, 0.5);;
+  border: 0;
+  box-shadow: 50px black;
+}
+
+a {
+  color: white;
 }
 
 .list-heading {
   text-align: center;
   padding-bottom: 10px;
+}
+
+.task-submit {
+  margin-bottom: 10px;
+}
+
+#priority {
+  margin-left: 20px;
+}
+
+select {
+  padding: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.task-section {
+  display: inline-block;
+  height: 100%;
+}
+
+.task-section:first-of-type {
+  width: 70%;
+}
+
+.task-section:last-of-type {
+  width: 10%;
+}
+
+.complete {
+  margin-left: 10px;
 }
